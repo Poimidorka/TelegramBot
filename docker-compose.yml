@@ -1,8 +1,13 @@
 version: "10.0"
 services:
   container1:
-    build: container1/
+    image: poimidorka/telegram_bot:container1
   container2:
-    build: container2/
+    build: container2
     depends_on:
       - container1
+    command: python3 main.py
+networks:
+  default:
+    name: bridge-nerwork
+    external: true
