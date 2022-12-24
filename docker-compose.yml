@@ -1,0 +1,8 @@
+version: "10.0"
+services:
+  container1:
+    build: container1/
+  container2:
+    build: container2/
+    depends_on:
+      - container1
